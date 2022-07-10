@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 使用 font awesome -->
+  <link rel="stylesheet" href="./css/all.css">
+  <!-- google font 字型 -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>計算機</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(90deg, rgb(46, 120, 159) 30%, rgb(47, 152, 147) 80%);
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    #online {
+      width: 25%;
+      min-width: 315px;
+      height: 85%;
+      background: #ddd;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 10px 10px 5px rgba(32, 79, 116, 0.7);
+    }
+
+    #nav {
+      width: 90%;
+      height: 7%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #nav .circle {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    #nav .squire {
+      width: 75px;
+      height: 15px;
+      border-radius: 15px;
+      background: #000;
+      margin-left: 1.5rem;
+    }
+
+    #container {
+      width: 90%;
+      height: 86%;
+      background: #000;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #top {
+      height: 5%;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    #top i {
+      padding: 0 0.5rem;
+    }
+
+    #top i:nth-of-type(3) {
+      margin-left: auto;
+    }
+
+    #center {
+      height: 87%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #input,
+    #input-show {
+      display: flex;
+      justify-content: end;
+      padding-right: 1rem;
+    }
+
+    #input {
+      height: 10%;
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.5);
+      align-items: flex-end;
+    }
+
+    #input-show {
+      height: 20%;
+      font-size: 2.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      align-items: center;
+    }
+
+    #center table {
+      height: 70%;
+      cursor: pointer;
+      border-spacing: 0;
+    }
+
+    #center table td {
+      font-size: 1.5rem;
+      text-align: center;
+      border: 1px solid rgb(45, 112, 164);
+    }
+
+    #center table td:hover {
+      filter: contrast(200%);
+      font-weight: 800;
+    }
+
+    #center .td-bg1 {
+      background: rgb(48, 155, 147);
+    }
+
+    #center .td-bg2 {
+      background: rgb(173, 213, 213);
+      color: rgba(45, 112, 164, 0.7);
+    }
+
+    #center .td-bg3 {
+      background: rgb(110, 178, 180);
+      color: rgba(45, 112, 164, 0.7);
+    }
+
+    #bottom {
+      height: 8%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #bottom a {
+      color: rgba(250, 250, 250, 0.5);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="online">
+    <div id="nav">
+      <div class="circle"></div>
+      <div class="squire"></div>
+    </div>
+    <div id="container">
+      <div id="top">
+        <i class="fa-solid fa-signal"></i>
+        <span id="time"></span>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-headphones"></i>
+        <i class="fa-solid fa-battery-three-quarters"></i>
+      </div>
+      <div id="center">
+        <div id="input" class="td-bg1"><span></span></div>
+        <div id="input-show" class="td-bg1"><span>0</span></div>
+        <table>
+          <tr>
+            <td class="td-bg2">C</td>
+            <td class="td-bg2">/</td>
+            <td class="td-bg2">*</td>
+            <td class="td-bg2">-</td>
+          </tr>
+          <tr>
+            <td class="td-bg3">7</td>
+            <td class="td-bg3">8</td>
+            <td class="td-bg3">9</td>
+            <td rowspan="2" class="td-bg2">+</td>
+          </tr>
+          <tr>
+            <td class="td-bg3">4</td>
+            <td class="td-bg3">5</td>
+            <td class="td-bg3">6</td>
+          </tr>
+          <tr>
+            <td class="td-bg3">1</td>
+            <td class="td-bg3">2</td>
+            <td class="td-bg3">3</td>
+            <td rowspan="2" class="td-bg2">=</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="td-bg3">0</td>
+            <td class="td-bg3">.</td>
+          </tr>
+        </table>
+      </div>
+      <div id="bottom">
+        <a href="#"><i class="fa-solid fa-bars"></i></a>
+        <a href="#"><i class="fa-solid fa-house"></i></a>
+        <a href="#"><i class="fa-solid fa-rotate-left"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const input = document.querySelector('#input span')
+    const input_show = document.querySelector('#input-show span')
+    const tds = document.getElementsByTagName('td')
+    const time = document.querySelector('#time')
+
+    for (const td of tds) {
+      td.onclick = () => {
+        const text = td.innerText
+        // console.log(text)
+        if (text === '=') {
+          // 加總
+          let total = eval(input.innerText).toString()
+          total = total.substr(0, 12)
+          input_show.innerText = total
+        } else if (text === 'C') {
+          // 清除
+          input.innerText = ''
+          input_show.innerText = '0'
+        } else {
+          if (input_show.innerText === '0' && input.innerText === '') {
+            input.innerText = text
+          } else {
+            input.innerText += text
+          }
+        }
+      }
+    }
+
+    document.onkeydown = (event) => {
+      if (event.key === 'Enter') {
+        // 加總
+        let total = eval(input.innerText).toString()
+        total = total.substr(0, 12)
+        input_show.innerText = total
+      } else if (event.key === 'Backspace' || event.key === 'Delete') {
+        // 清空
+        input.innerText = ''
+        input_show.innerText = '0'
+      } else if (
+        // 數字 和 加 減 乘 除 
+        !isNaN(parseInt(event.key)) ||
+        event.key === '+' ||
+        event.key === '-' ||
+        event.key === '*' ||
+        event.key === '/' ||
+        event.key === '.'
+      ) {
+        if (input_show.innerText === '0' && input.innerText === '') {
+          input.innerText = event.key
+        } else {
+          input.innerText += event.key
+        }
+      }
+    }
+
+    setInterval(() => {
+      const date = new Date()
+      const hour = date.getHours().toString(10).padStart(2, '0')
+      const minute = date.getMinutes().toString(10).padStart(2, '0')
+      const time1 = hour+':'+minute
+      time.innerText = time1
+    }, 1000)
+  </script>
+</body>
+</html>
